@@ -7,7 +7,7 @@ const Featuring = () => {
   return (
     <section className="mb-28">
       <div className="max-w-[1000px] mx-auto">
-        <p className="text-[60px] text-bold max-w-[600px] text-center mx-auto">
+        <p className="text-4xl md:text-[60px] text-bold max-w-[600px] text-center mx-auto">
           Control everything in a single place.
         </p>
         <div className="mt-32 relative">
@@ -15,11 +15,18 @@ const Featuring = () => {
           <Image
             src={img2}
             alt=""
-            width={900}
-            className="absolute left-7 top-10"
+            className="absolute left-7 top-10 w-[500px] md:w-[850px]"
           />
-          <Image src={img3} alt="" className="absolute -right-16 top-[150px]" />
-          <Image src={img4} alt="" className="absolute -left-2 top-[230px]" />
+          <Image
+            src={img3}
+            alt=""
+            className="absolute md:-right-16 top-[150px]"
+          />
+          <Image
+            src={img4}
+            alt=""
+            className="absolute md:-left-2 top-[230px]"
+          />
         </div>
       </div>
     </section>

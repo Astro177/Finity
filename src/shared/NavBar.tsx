@@ -7,10 +7,9 @@ import {
   Typography,
   Button,
   IconButton,
-  Card,
 } from "@material-tailwind/react";
 import Image from "next/image";
-
+import logo from "../assets/Logo-CaseConflict.png";
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -68,11 +67,10 @@ const NavBar = () => {
 
   return (
     <nav className="">
-      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-none">
         <div className="flex items-center justify-between text-blue-gray-900">
           <div>
-            <img src="../assets/Rectangle (3).png.png" alt="" />
-            <p>Finity</p>
+            <Image src={logo} alt=""></Image>
           </div>
 
           <div className="hidden lg:block">{navList}</div>

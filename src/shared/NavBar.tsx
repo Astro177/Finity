@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
@@ -8,6 +9,7 @@ import {
   IconButton,
   Card,
 } from "@material-tailwind/react";
+import Image from "next/image";
 
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -68,25 +70,15 @@ const NavBar = () => {
     <nav className="">
       <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
-          >
-            Material Tailwind
-          </Typography>
+          <div>
+            <img src="../assets/Rectangle (3).png.png" alt="" />
+            <p>Finity</p>
+          </div>
 
-          <div className="mr-4 hidden lg:block">{navList}</div>
+          <div className="hidden lg:block">{navList}</div>
           <div className="flex items-center gap-x-1">
-            <Button variant="text" size="sm" className="hidden lg:inline-block">
-              <span>Log In</span>
-            </Button>
-            <Button
-              variant="gradient"
-              size="sm"
-              className="hidden lg:inline-block"
-            >
-              <span>Sign in</span>
+            <Button size="md" className="hidden lg:inline-block bg-[#258AFF]">
+              <span>Get Started For Free</span>
             </Button>
           </div>
           <IconButton
@@ -129,12 +121,14 @@ const NavBar = () => {
         </div>
         <MobileNav open={openNav}>
           {navList}
-          <div className="flex items-center gap-x-1">
-            <Button fullWidth variant="text" size="sm" className="">
-              <span>Log In</span>
-            </Button>
-            <Button fullWidth variant="gradient" size="sm" className="">
-              <span>Sign in</span>
+          <div className="flex items-center">
+            <Button
+              fullWidth
+              variant="filled"
+              size="md"
+              className="bg-[#258AFF] text-white"
+            >
+              <span>Get Started For Free</span>
             </Button>
           </div>
         </MobileNav>

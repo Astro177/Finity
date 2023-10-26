@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const Ratings = () => {
   return (
-    <section className="max-w-[1200px] mx-auto mt-28 mb-28">
-      <div className="flex justify-between">
+    <section className="max-w-[1200px] mx-auto md:mt-28 mb-28 px-10 md:px-0">
+      <div className="md:flex md:justify-between">
         <div className="flex flex-col gap-2">
           <p className="text-[70px] text-bold">10K</p>
           <div className="text-red-400 flex gap-1 -mt-3">
@@ -39,10 +39,28 @@ const Ratings = () => {
             Trusted by 25,000+ happy Marketers and WordPress users since 2018.
           </p>
           <p className="text-[#7C8087] mt-10"> Also Featured in</p>
-          <div className="flex gap-8 mt-10">
-            <Image src={logo2} alt="" width={130} height={34} />
-            <Image src={logo3} alt="" width={130} height={34} />
-            <Image src={logo4} alt="" width={130} height={34} />
+          <div className="md:flex gap-8 mt-10">
+            <Image
+              src={logo2}
+              alt=""
+              width={130}
+              height={34}
+              className="mb-6 md:mb-0"
+            />
+            <Image
+              src={logo3}
+              alt=""
+              width={130}
+              height={34}
+              className="mb-6 md:mb-0"
+            />
+            <Image
+              src={logo4}
+              alt=""
+              width={130}
+              height={34}
+              className="mb-6 md:mb-0"
+            />
           </div>
         </div>
       </div>

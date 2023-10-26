@@ -2,9 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@material-tailwind/react";
 import Image from "next/image";
-import banner1 from "../../assets/Rectangle.png";
-import banner2 from "../../assets/RectangleCopy.png";
-import banner5 from "../../assets/Group12.png";
+import banner1 from "../../../assets/Rectangle.png";
+import banner2 from "../../../assets/RectangleCopy.png";
+import banner5 from "../../../assets/Group12.png";
 
 const Banner = () => {
   return (

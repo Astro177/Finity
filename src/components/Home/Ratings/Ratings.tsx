@@ -1,7 +1,7 @@
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
-import logo2 from "../../assets/logo-4.png";
-import logo3 from "../../assets/logo-3.png";
-import logo4 from "../../assets/logo-2.png";
+import logo2 from "../../../assets/logo-4.png";
+import logo3 from "../../../assets/logo-3.png";
+import logo4 from "../../../assets/logo-2.png";
 import Image from "next/image";
 
 const Ratings = () => {

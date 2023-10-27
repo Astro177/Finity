@@ -5,9 +5,9 @@ import img3 from "../../../assets/Group11.png";
 import img4 from "../../../assets/Group12.png";
 const Featuring = () => {
   return (
-    <section className="mb-28">
+    <section className="mb-28 px-10 md:px-0">
       <div className="max-w-[1000px] mx-auto">
-        <p className="text-4xl md:text-[60px] text-bold max-w-[600px] text-center mx-auto">
+        <p className="text-4xl md:text-[60px] text-bold max-w-[600px] text-center mx-auto leading-normal text-[#1D293F]">
           Control everything in a single place.
         </p>
         <div className="mt-32 relative">
@@ -15,7 +15,7 @@ const Featuring = () => {
           <Image
             src={img2}
             alt=""
-            className="absolute left-7 top-10 w-[500px] md:w-[850px]"
+            className="absolute left-7 top-10 w-[300px] md:w-[850px] mx-auto"
           />
           <Image
             src={img3}

@@ -8,9 +8,9 @@ import img5 from "../../../assets/Oval.png";
 const Growing = () => {
   return (
     <section className="bg-[#F7F7F7] mt-[350px] md:mt-[500px] mb-20">
-      <div className="max-w-[1200px] mx-auto pt-[200px] pb-6 md:flex justify-around items-center">
+      <div className="max-w-[1200px] mx-auto pt-[200px] pb-6 md:flex justify-around items-center px-10 md:px-0">
         <div className="">
-          <p className="text-[60px] text-bold w-[450px] text-[#1D293F]">
+          <p className="text-[60px] text-bold md:w-[450px] text-[#1D293F]">
             Grow Your Business Fast.
           </p>
           <div className="max-w-[400px] mt-20">

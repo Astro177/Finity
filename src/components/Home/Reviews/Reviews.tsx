@@ -128,7 +128,7 @@ const Reviews = () => {
       <p className="text-[60px] text-bold text-[#1D293F] mt-10 md:max-w-[700px]">
         1,000+ customers are loving Instappoint.
       </p>
-      <div className="mt-32 mb-32">
+      <div className="mt-32 mb-32 hidden md:block">
         <Slider {...settings}>
           {reviews.map((review, i) => (
             <div

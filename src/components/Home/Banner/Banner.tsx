@@ -5,6 +5,8 @@ import Image from "next/image";
 import banner1 from "../../../assets/Rectangle.png";
 import banner2 from "../../../assets/RectangleCopy.png";
 import banner5 from "../../../assets/Group12.png";
+import banner6 from "../../../assets/Ovall.png";
+import banner3 from "../../../assets/DotPattern1.png";
 
 const Banner = () => {
   return (
@@ -37,9 +39,14 @@ const Banner = () => {
             <Image
               src={banner1}
               alt=""
-              className="md:-mt-20 md:ml-[10px]"
+              className="md:-mt-20 md:ml-[10px] z-10"
               width={300}
               height={300}
+            />
+            <Image
+              src={banner6}
+              alt=""
+              className="absolute -right-28 -top-6 hidden md:block"
             />
             <Image
               src={banner2}
@@ -49,8 +56,11 @@ const Banner = () => {
               height={300}
             />
           </div>
-          <div className="absolute top-[400px] md:ml-[170px]">
+          <div className="absolute top-[400px] md:ml-[170px] z-20">
             <Image src={banner5} alt="" />
+          </div>
+          <div className="absolute bottom-[     20] right-[650px] hidden md:block">
+            <Image src={banner3} alt="" />
           </div>
         </div>
       </div>

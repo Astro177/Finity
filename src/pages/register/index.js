@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Input } from "@material-tailwind/react";
 import Link from "next/link";
 import React, { useContext } from "react";

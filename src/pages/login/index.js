@@ -1,8 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { TbBrandGoogle } from "react-icons/tb";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { initFirebase } from "../../firebase/firebase.config.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Link from "next/link.js";
 import { useContext, useState } from "react";
 import { Input } from "@material-tailwind/react";

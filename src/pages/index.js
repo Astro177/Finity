@@ -6,6 +6,7 @@ import Path from "@/components/Home/Path/Path.tsx";
 import Featuring from "@/components/Home/Featuring/Featuring.tsx";
 import Growing from "@/components/Home/Growing/Growing.tsx";
 import Meetings from "@/components/Home/Meetings/Meetings.tsx";
+import Reviews from "@/components/Home/Reviews/Reviews.tsx";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Featuring />
       <Growing />
       <Meetings />
+      <Reviews />
     </div>
   );
 };

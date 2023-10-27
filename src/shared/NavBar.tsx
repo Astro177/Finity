@@ -1,15 +1,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
-  MobileNav,
   Typography,
   Button,
   IconButton,
+  Collapse,
 } from "@material-tailwind/react";
 import Image from "next/image";
 import logo from "../assets/Logo-CaseConflict.png";
+import Link from "next/link";
+import { AuthContext } from "@/Provider/AuthProvider";
+import toast from "react-hot-toast";
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -19,6 +22,18 @@ const NavBar = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Successfully logged out!");
+      })
+      .catch((err: any) => {
+        console.log(err.message);
+      });
+  };
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -52,16 +67,18 @@ const NavBar = () => {
           Support
         </a>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
-      </Typography>
+      {user && (
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <Link href={"dashboard"} className="flex items-center">
+            Dashboard
+          </Link>
+        </Typography>
+      )}
     </ul>
   );
 
@@ -69,15 +86,37 @@ const NavBar = () => {
     <nav className="">
       <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-none">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <div>
-            <Image src={logo} alt=""></Image>
-          </div>
+          <Link href={"/"}>
+            {" "}
+            <div>
+              <Image src={logo} alt=""></Image>
+            </div>
+          </Link>
 
           <div className="hidden lg:block">{navList}</div>
           <div className="flex items-center gap-x-1">
-            <Button size="md" className="hidden lg:inline-block bg-[#258AFF]">
-              <span>Get Started For Free</span>
-            </Button>
+            {user ? (
+              <Button
+                fullWidth
+                variant="filled"
+                size="md"
+                className="bg-[#258AFF] text-white"
+                onClick={handleLogOut}
+              >
+                <span>Log Out</span>
+              </Button>
+            ) : (
+              <Link href={"login"}>
+                <Button
+                  fullWidth
+                  variant="filled"
+                  size="md"
+                  className="bg-[#258AFF] text-white"
+                >
+                  <span>Get Started For Free</span>
+                </Button>
+              </Link>
+            )}
           </div>
           <IconButton
             variant="text"
@@ -117,19 +156,33 @@ const NavBar = () => {
             )}
           </IconButton>
         </div>
-        <MobileNav open={openNav}>
+        <Collapse open={openNav}>
           {navList}
           <div className="flex items-center">
-            <Button
-              fullWidth
-              variant="filled"
-              size="md"
-              className="bg-[#258AFF] text-white"
-            >
-              <span>Get Started For Free</span>
-            </Button>
+            {user ? (
+              <Button
+                fullWidth
+                variant="filled"
+                size="md"
+                className="bg-[#258AFF] text-white"
+                onClick={handleLogOut}
+              >
+                <span>Log Out</span>
+              </Button>
+            ) : (
+              <Link href={"login"}>
+                <Button
+                  fullWidth
+                  variant="filled"
+                  size="md"
+                  className="bg-[#258AFF] text-white"
+                >
+                  <span>Get Started For Free</span>
+                </Button>
+              </Link>
+            )}
           </div>
-        </MobileNav>
+        </Collapse>
       </Navbar>
     </nav>
   );

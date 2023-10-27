@@ -1,37 +1,39 @@
 import { Typography } from "@material-tailwind/react";
 
-const SITEMAP = [
-  {
-    title: "Company",
-    links: ["About Us", "Careers", "Our Team", "Projects"],
-  },
-  {
-    title: "Help Center",
-    links: ["Discord", "Twitter", "GitHub", "Contact Us"],
-  },
-  {
-    title: "Resources",
-    links: ["Blog", "Newsletter", "Free Products", "Affiliate Program"],
-  },
-  {
-    title: "Products",
-    links: ["Templates", "UI Kits", "Icons", "Mockups"],
-  },
-];
+const Footer = () => {
+  const SITEMAP = [
+    {
+      title: "Community",
+      links: ["For Talents", "For Companies", "Facebook Group", "FAQ "],
+    },
+    {
+      title: "About Us",
+      links: ["Meet The Team", "Our Story", "Career "],
+    },
+    {
+      title: "Useful",
+      links: ["Free Resume Builder", "Free Graphics", "Career Blog"],
+    },
+    {
+      title: "Subscribe to Our Newsletter",
+      links: [
+        "Time is the most precious thing you have when bootstrapping. You can't take time.",
+      ],
+    },
+  ];
 
-const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-export const Footer = () => {
   return (
-    <footer className="relative w-full">
-      <div className="mx-auto w-full max-w-7xl px-8">
-        <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="">
+      <div className="mx-auto max-w-[1200px] px-10 md:px-0">
+        <div className="mx-auto grid w-full grid-cols-1 pt-12 md:grid-cols-2 lg:grid-cols-4">
           {SITEMAP.map(({ title, links }, key) => (
             <div key={key} className="w-full">
               <Typography
-                variant="small"
+                variant="h5"
                 color="blue-gray"
-                className="mb-4 font-bold uppercase opacity-50"
+                className="mb-4 font-bold"
               >
                 {title}
               </Typography>
@@ -45,7 +47,7 @@ export const Footer = () => {
                   >
                     <a
                       href="#"
-                      className="inline-block py-1 pr-2 transition-transform hover:scale-105"
+                      className="inline-block py-1 pr-2 transition-transform hover:scale-105 opacity-60"
                     >
                       {link}
                     </a>
@@ -55,14 +57,15 @@ export const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+
+        <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between mt-12">
           <Typography
             variant="small"
             className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
           >
             &copy; {currentYear}{" "}
-            <a href="https://material-tailwind.com/">Material Tailwind</a>. All
-            Rights Reserved.
+            <a href="https://material-tailwind.com/">Finity</a>. All Rights
+            Reserved.
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
             <Typography
@@ -157,3 +160,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

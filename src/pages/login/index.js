@@ -6,6 +6,7 @@ import Link from "next/link.js";
 import { useContext, useState } from "react";
 import { Input } from "@material-tailwind/react";
 import { AuthContext } from "../../Provider/AuthProvider.jsx";
+import Router from "next/router.js";
 
 const login = () => {
   const { handleGoogleSignIn, signIn } = useContext(AuthContext);
@@ -26,6 +27,7 @@ const login = () => {
         console.log(result.user);
         reset();
         toast.success("Successfully logged in!");
+        Router.push("/dashboard");
       })
       .catch((err) => {
         setError(err.message);

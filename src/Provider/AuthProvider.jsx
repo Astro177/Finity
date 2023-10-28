@@ -13,7 +13,6 @@ import {
 } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { app } from "../firebase/firebase.config";
-import Router from "next/router";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -33,7 +32,6 @@ const AuthProvider = ({ children }) => {
       .then((result) => {
         setUser(result.user);
         toast.success("User has been registered");
-        Router.push("dashboard");
       })
       .catch((err) => {
         console.log(err.message);

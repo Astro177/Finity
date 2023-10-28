@@ -6,7 +6,6 @@ import { TbBrandGoogle } from "react-icons/tb";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider.jsx";
-import Router from "next/router.js";
 
 const register = () => {
   const { registerUser, updateUserDetails, handleGoogleSignIn } =
@@ -27,7 +26,6 @@ const register = () => {
         updateUserDetails(result.user, data.name, data.photo);
         reset();
         toast.success("Successfully registered");
-        Router.push("/login");
       });
     }
   };

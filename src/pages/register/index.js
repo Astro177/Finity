@@ -71,7 +71,7 @@ const register = () => {
             href="/login"
             className="text-xl hover:underline decoration-1 text-blue-400"
           >
-            Sign in
+            Sign Up
           </Link>
         </p>
       </form>

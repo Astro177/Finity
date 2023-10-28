@@ -63,7 +63,7 @@ const register = () => {
           type="submit"
           className="bg-[#258AFF] px-16 py-2 rounded-xl mt-4 text-white font-bold hover:-translate-y-1 duration-300"
         >
-          Sign In
+          Sign Up
         </button>
         <p className="mb-4 mt-6 text-sm">
           <span className="text-xl">Already Have an Account?</span>
@@ -71,7 +71,7 @@ const register = () => {
             href="/login"
             className="text-xl hover:underline decoration-1 text-blue-400"
           >
-            Sign Up
+            Sign in
           </Link>
         </p>
       </form>

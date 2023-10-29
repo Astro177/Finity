@@ -9,7 +9,6 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  updateProfile,
 } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { app } from "../firebase/firebase.config";
@@ -47,20 +46,6 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUserDetails = (user, name, photo) => {
-    setLoading(true);
-    updateProfile(user, {
-      displayName: name,
-      photoURL: photo,
-    })
-      .then(() => {
-        setUser();
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
@@ -84,7 +69,6 @@ const AuthProvider = ({ children }) => {
     user,
     signIn,
     logOut,
-    updateUserDetails,
     loading,
   };
   return (

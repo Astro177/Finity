@@ -1,17 +1,17 @@
 import { ThemeProvider } from "@material-tailwind/react";
 import "../styles/globals.css";
-import Layout from "../components/layout";
-import AuthProvider from "../Provider/AuthProvider.jsx";
+import Layout from "../components/Layout";
+import AuthProvider from "../Provider/AuthProvider";
 
 const App = ({ Component, pageProps }) => {
   return (
-    <AuthProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <AuthProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </ThemeProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 };
 

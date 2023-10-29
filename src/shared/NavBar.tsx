@@ -18,10 +18,17 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    const handleResize = () => {
+      if (window.innerWidth >= 960) {
+        setOpenNav(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const handleLogOut = () => {
@@ -99,7 +106,7 @@ const NavBar = () => {
                 fullWidth
                 variant="filled"
                 size="md"
-                className="bg-[#258AFF] text-white"
+                className="bg-[#258AFF] text-white hidden md:block"
                 onClick={handleLogOut}
               >
                 <span>Log Out</span>
@@ -110,7 +117,7 @@ const NavBar = () => {
                   fullWidth
                   variant="filled"
                   size="md"
-                  className="bg-[#258AFF] text-white"
+                  className="bg-[#258AFF] text-white hidden md:block"
                 >
                   <span>Get Started For Free</span>
                 </Button>

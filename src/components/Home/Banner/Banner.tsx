@@ -7,6 +7,7 @@ import banner2 from "../../../assets/RectangleCopy.png";
 import banner5 from "../../../assets/Group12.png";
 import banner6 from "../../../assets/Ovall.png";
 import banner3 from "../../../assets/DotPattern1.png";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -20,13 +21,15 @@ const Banner = () => {
             We’ve helped over 2,500 job seekers to get into the most popular
             tech teams.
           </p>
-          <Button
-            variant="filled"
-            size="lg"
-            className="bg-[#258AFF] max-w-[300px] rounded-md py-5"
-          >
-            Get Started For Free
-          </Button>
+          <Link href={"/login"}>
+            <Button
+              variant="filled"
+              size="lg"
+              className="bg-[#258AFF] max-w-[300px] rounded-md py-5"
+            >
+              Get Started For Free
+            </Button>
+          </Link>
           <p className="text-sm">
             Still Confused?{" "}
             <span className="text-[#258AFF] hover:underline">

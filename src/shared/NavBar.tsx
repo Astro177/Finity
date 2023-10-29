@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Navbar,
   Typography,
@@ -14,16 +14,15 @@ import Link from "next/link";
 import { AuthContext } from "@/Provider/AuthProvider";
 import toast from "react-hot-toast";
 const NavBar = () => {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-
-  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()

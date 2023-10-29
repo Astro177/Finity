@@ -11,7 +11,7 @@ import Reviews from "@/components/Home/Reviews/Reviews.tsx";
 const Home = () => {
   return (
     <div>
-      <Head>Finite</Head>
+      <Head>Finity</Head>
       <Banner />
       <Ratings />
       <Path />
